@@ -21,15 +21,15 @@ During the training, [nn.L1Loss()](https://pytorch.org/docs/stable/generated/tor
 
 > Start training:
 
-![image](https://github.com/Mikhail-bmstu/pix2pix_GAN/assets/83812505/a4f9b0d0-c8c9-443b-9a9a-46907e37691c)
+![image](https://github.com/Mikhail-bmstu/pix2pix_GAN/assets/83812505/fc63c7f4-4458-4df1-816c-29df34af849d)
 
 > During training:
 
-![image](https://github.com/Mikhail-bmstu/pix2pix_GAN/assets/83812505/37097430-adc7-400d-beba-9e0ecae1b6c9)
+![image](https://github.com/Mikhail-bmstu/pix2pix_GAN/assets/83812505/a4f9b0d0-c8c9-443b-9a9a-46907e37691c)
 
 > End of training:
 
-...
+![image](https://github.com/Mikhail-bmstu/pix2pix_GAN/assets/83812505/37097430-adc7-400d-beba-9e0ecae1b6c9)
 
 ## Usage
 In the arguments of the load_model method, after the model, specify the paths to the [discriminator and generator weights](https://www.kaggle.com/datasets/markovka/pix2pix128)
