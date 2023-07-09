@@ -15,7 +15,7 @@ f2c_model = {
 
 load_model(f2c_model)
 
-TOKEN = '6162150829:AAHdEW6ulZEOEvCZDQ-beWGhb3IGGGAWWyw'
+TOKEN = 'TELEGRAM BOT TOKEN (view in submit)'
 # log level
 logging.basicConfig(level=logging.INFO)
 
