@@ -27,4 +27,9 @@ torch.optim.Adam() was used as optimazer.
 
 ![image](https://github.com/Mikhail-bmstu/pix2pix_GAN/assets/83812505/37097430-adc7-400d-beba-9e0ecae1b6c9)
 
-> Уnd of training
+> End of training:
+
+...
+
+## Usage
+In the arguments of the load_model method, after the model, specify the paths to the discriminator and generator weights
