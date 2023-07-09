@@ -15,9 +15,9 @@ Using the PyTorch library, the pix2pix GAN architecture was implemented:
 ![sample](img/face2_comics_sample_large.jpg)
 
 ### Learning
-During the training, nn.L1Loss() (Mean Absolute Error) and nn.BCEWithLogitsLoss() were used.
+During the training, [nn.L1Loss()](https://pytorch.org/docs/stable/generated/torch.nn.L1Loss.html) (Mean Absolute Error) and [nn.BCEWithLogitsLoss()](https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html) were used.
 
-torch.optim.Adam() was used as optimazer.
+[torch.optim.Adam()](https://pytorch.org/docs/stable/generated/torch.optim.Adam.html) was used as optimazer.
 
 > Start training:
 
@@ -32,4 +32,10 @@ torch.optim.Adam() was used as optimazer.
 ...
 
 ## Usage
-In the arguments of the load_model method, after the model, specify the paths to the discriminator and generator weights
+In the arguments of the load_model method, after the model, specify the paths to the [discriminator and generator weights](https://www.kaggle.com/datasets/markovka/pix2pix128)
+
+![image](https://github.com/Mikhail-bmstu/pix2pix_GAN/assets/83812505/d2d74f98-faa5-4579-8fad-4a81e5d4b04b)
+
+Run file bot.py
+1. In console of your computer
+2. In cell of notebook (.ipynb) (example: `!python3 /kaggle/input/gan-tg-bot/bot.py`)
