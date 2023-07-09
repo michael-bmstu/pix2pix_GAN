@@ -27,8 +27,8 @@ dp = Dispatcher(bot)
 async def process_start_command(message: types.Message):
     await message.answer("Привет!\n"
                          "Ты сегодня отлично выглядишь 😎")
-    await message.answer("Пришли мне свою фотоку, и я оформлю ее в стиле комикса 😜\n"
-                        "подробнее /help")
+    await message.answer("Пришли мне свой портрет, и я оформлю его в стиле комикса 😜\n"
+                        "подробнее: /help")
 
 @dp.message_handler(commands=['help'])
 async def process_help_cmd(message: types.Message):
