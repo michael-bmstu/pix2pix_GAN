@@ -197,5 +197,5 @@ class Discriminator(nn.Module):
     
 def load_model(model, path_d='/kaggle/input/pix2pix128/disriminator.pt', path_g='/kaggle/input/pix2pix128/generator.pt'):
     
-    model["discriminator"].load_state_dict(torch.load(path_d))
-    model["generator"].load_state_dict(torch.load(path_g))
+    model["discriminator"].load_state_dict(torch.load(path_d, map_location='cpu')))
+    model["generator"].load_state_dict(torch.load(path_g, map_location='cpu')))
