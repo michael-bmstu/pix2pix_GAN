@@ -41,11 +41,16 @@ Run file bot.py
 1. In console of your computer
 2. In cell of notebook (.ipynb) (example: `!python3 /kaggle/input/gan-tg-bot/bot.py`)
 
-### About the Bot
+### Link to the Bot
 https://t.me/face2comic_bot
 
 <img src='img/qr.png' width="300">
 
-### Example
+To get started, write "/start"
+
+### Examples
 
 <img src='https://github.com/Mikhail-bmstu/pix2pix_GAN/assets/83812505/e48b17e6-5458-4e51-8b89-41b81e385ba3' width="400">
+
+<img src='https://github.com/Mikhail-bmstu/pix2pix_GAN/assets/83812505/4d8c4e87-64f8-48e0-aab3-fc3d9ef902d4' width="400">
+
