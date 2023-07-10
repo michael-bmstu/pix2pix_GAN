@@ -13,7 +13,7 @@ f2c_model = {
     "generator": Generator()
 }
 
-load_model(f2c_model)
+load_model(f2c_model, path_to_disc_weigths, path_to_gen_weigths)
 
 TOKEN = 'TELEGRAM BOT TOKEN (view in submit)'
 # log level
