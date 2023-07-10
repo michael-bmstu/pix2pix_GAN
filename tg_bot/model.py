@@ -1,7 +1,5 @@
-from torchvision import transforms as T
 import torch
 import torch.nn as nn
-from PIL import Image
 
 class Encode(nn.Module):
     def __init__(self, in_channels, out_channels):
@@ -86,19 +84,19 @@ class Generator(nn.Module):
         
         # Downsampling
         
-        # 256 -> 128
+        # 128 -> 64
         self.encode0 = Encode(3, 64)
         self.pool0 = Pool2(64)
         
-        # 128 -> 64
+        # 64 -> 32
         self.encode1 = Encode(64, 128)
         self.pool1 = Pool2(128)
         
-        # 64 -> 32
+        # 32 -> 16
         self.encode2 = Encode(128, 256)
         self.pool2 = Pool2(256)
         
-        # 32 -> 16 (8)
+        # 16 -> 8
         self.encode3 = Encode(256, 512)
         self.pool3 = Pool2(512)
         
@@ -114,19 +112,19 @@ class Generator(nn.Module):
         
         # Upsampling
         
-        # 16 -> 32
+        # 8 -> 16
         self.unpool0 = Unpool2(512)
         self.decode0 = Decode(512, 256)
         
-        # 32 -> 64
+        # 16 -> 32
         self.unpool1 = Unpool2(256)
         self.decode1 = Decode(256, 128)
         
-        # 64 -> 128
+        # 32 -> 64
         self.unpool2 = Unpool2(128)
         self.decode2 = Decode(128, 64)
         
-        # 128 -> 256 (128)
+        # 64 -> 128
         self.unpool3 = Unpool2(64)
         self.decode3 = nn.Sequential(  # without last LeakyReLU
             nn.Conv2d(64 * 2, 64, kernel_size=3, padding=1, bias=True, padding_mode='reflect'),
@@ -172,16 +170,15 @@ class Discriminator(nn.Module):
     def __init__(self):
         super().__init__()
         
-        self.init = nn.Sequential(  # 256 -> 128
+        self.init = nn.Sequential(  # 128 -> 64
             nn.Conv2d(3*2, 64, kernel_size=4, stride=2, padding=1, padding_mode='reflect'),
             nn.LeakyReLU(0.2, True),
         )
         self.conv = nn.Sequential(
-            CNNBlock(64, 128),  # 128 -> 64
-            CNNBlock(128, 256),  # 64 -> 32
-            CNNBlock(256, 512),  # 32 -> 16
-            CNNBlock(512, 512),  # 16 -> 8 (4)
-            #CNNBlock(512, 512),  # 8 -> 4
+            CNNBlock(64, 128),  # 64 -> 32
+            CNNBlock(128, 256),  # 32 -> 16
+            CNNBlock(256, 512),  # 16 -> 8
+            CNNBlock(512, 512),   # 8 -> 4
         )
       
         self.pred = nn.Conv2d(512, 1, kernel_size=4, stride=1)
