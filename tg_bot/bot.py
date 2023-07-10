@@ -1,11 +1,8 @@
-from torchvision import transforms as T
-import torch
-import torch.nn as nn
-from PIL import Image
-
-from aiogram import Bot, Dispatcher, executor, types
+from aiogram import Bot, Dispatcher, types
 from aiogram.utils import executor
 import logging
+from PIL import Image
+from torchvision import transforms as T
 from model import *
 
 f2c_model = {
@@ -58,7 +55,6 @@ async def process_photo(message: types.Message):
     await message.answer("Загружаю изображение в модель...")
     face = transform_bot(image)
     face = face[None, :, :, :]
-    print(face.shape)
     comic = f2c_model["generator"](face)
     comic = comic * mean[0] + std[0]
     image = T.ToPILImage()(torch.squeeze(comic))
