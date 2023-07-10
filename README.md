@@ -9,6 +9,7 @@ Using the PyTorch library, the pix2pix GAN architecture was implemented:
 2) A classical neural network with convolution in the last layer (PathGAN architecture) was used as a discriminator
 
 <img src='img/archpng.png' heigth='300'>
+
 ### Dataset
 [Comic faces (paired, synthetic)](https://www.kaggle.com/datasets/defileroff/comic-faces-paired-synthetic) was used as a dataset:
 
