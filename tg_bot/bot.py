@@ -2,6 +2,7 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.utils import executor
 import logging
 from PIL import Image
+import numpy as np
 from torchvision import transforms as T
 from model import *
 
@@ -43,8 +44,26 @@ async def process_photo(message: types.Message):
     image.load()
     width, height = image.size
     pic_size = min(width, height)
-    mean = [0.5] * 3
-    std = [0.5] * 3
+    
+    left = (width - pic_size) / 2
+    top = (height - pic_size) / 2
+    right = (width + pic_size) / 2
+    bottom = (height + pic_size) / 2
+
+    # Crop the center of the image
+    image = image.crop((left, top, right, bottom))
+    arr_image = np.array(image) / 255.0
+
+    # Dataset stats
+    mean_ds = np.array([0.02437675, -0.17417155, -0.26729974])
+    std_ds = np.array([0.47649799, 0.39678715, 0.37886345])
+
+    # Image stats
+    mean_img = arr_image.mean(axis=(0, 1))
+    std_img = arr_image.std(axis=(0, 1))
+
+    mean = mean_img - mean_ds
+    std = std_img / std_ds
     transform_bot = T.Compose([
         T.ToTensor(),
         T.CenterCrop(pic_size),
