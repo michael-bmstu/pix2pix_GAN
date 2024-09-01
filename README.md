@@ -42,9 +42,6 @@ Run file bot.py
 1. In console of your computer
 2. In cell of notebook (.ipynb) (example: `!python3 /kaggle/input/gan-tg-bot/bot.py`)
 
-If you have any questions, write to me in a telegram: https://t.me/Michael_Solovev
-<img src='https://github.com/Mikhail-bmstu/pix2pix_GAN/assets/83812505/c3126e3b-3be2-4aa2-a8fa-3e796972b7ea' height="228">
-
 ### Link to the Bot
 https://t.me/face2comic_bot
 
